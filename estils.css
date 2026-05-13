@@ -828,7 +828,8 @@ nav {
     }
 
     /* AJUST PER A LA GALERIA (2 COLUMNES EN MÒBIL) */
-.fotosgaleria {
+    @media screen and (max-width: 768px) {
+    .fotosgaleria {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: space-between; /* Distribueix l'espai sobrant entre columnes */
@@ -855,7 +856,7 @@ nav {
         display: block;
         box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Opcional: un xic d'ombra per donar relleu */
     }
-
+    }
 
 /*Imatge altafulla_26*/
 /* Busquem la imatge pel seu nom i l'amaguem */
