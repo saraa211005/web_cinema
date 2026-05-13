@@ -850,7 +850,7 @@ nav {
     .fotosgaleria img {
         width: 100% !important;
         /* FORCEM LA MATEIXA MIDA: */
-        height: 650px !important;      /* Alçada fixa per a que totes les caixes siguin iguals */
+        height: 350px !important;      /* Alçada fixa per a que totes les caixes siguin iguals */
         object-fit: cover !important;  /* Això retalla la foto per a que ompli la caixa sense deformar-se */
         border-radius: 8px;
         display: block;
