@@ -12,8 +12,8 @@ El projecte té un clar **vincle amb la geografia** mitjançant la cartografia i
 
 ## Dades i Recursos
 Per a la realització del projecte s'han utilitzat les següents fonts i tecnologies:
-* **Fonts d'informació:** Crítiques de redacció pròpia, dades d'ubicació de cinemes de Tarragona i materials docents de la URV.
-* **Recursos visuals:** Imatges i cartells obtinguts de repositoris digitals i Pinterest.
+* **Fonts d'informació:** Crítiques de redacció pròpia, dades d'ubicació de cinemes de Tarragona i sinopsis i informació de fitxes tècniques de la web filmaffinity.
+* **Recursos visuals:** Imatges i cartells obtinguts de repositoris digitals i Pinterest. També videos recuperats de youtube.
 * **Tecnologies:** HTML5, CSS3 (ús intensiu de **Grid Layout**) i JavaScript.
 * **Cartografia:** Biblioteca de codi obert [Leaflet.js](https://leafletjs.com/).
 
@@ -22,7 +22,7 @@ La web es divideix en 6 seccions principals:
 1.  **Inici (`index.html`):** Presentació i recomanacions destacades com *Whiplash* o *El viatge de Chihiro*.
 2.  **Informació (`infogeneral.html`):** Explicació del funcionament del blog, qui sóc i una guia visual de valoració per estrelles.
 3.  **Galeria (`galeria.html`):** Recull visual de portades organitzades per gèneres (Terror, Aventura, Drama, Animació, etc.).
-4.  **Mapa (`mapacine.html`):** Mapa interactiu amb marcadors dels cinemes i filmoteques de la zona.
+4.  **Mapa (`mapacine.html`):** Mapa interactiu amb marcadors dels cinemes de la zona.
 5.  **Sortides (`sortides.html`):** Espai dedicat a esdeveniments culturals itinerants amb rutes cartografiades.
 6.  **Contacte (`contacte.html`):** Formulari complet per rebre feedback i preferències dels usuaris.
 
