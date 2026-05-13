@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog de Pel·lícules - Informació</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estils.css">
+</head>
+
+<body>
+ <!-- Capçalera -->
+    <header>
+        <h1>Cinesa</h1>
+        <p class="subtitol">INFORMACIÓ GENERAL</p>
+    </header>
+
+ <!-- Menú de selecció (botons de navegació) -->
+  <nav>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="infogeneral.html">Informació</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mapacine.html">Mapa</a></li>
+        <li><a href="sortides.html">Sortides</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+    </ul>
+</nav>
+
+    <main>
+        <section class="movie-grid">
+            
+            <article class="etiquetes-info">
+                <div class="peli-info">
+                    <h3 class="títol-etiq">SOBRE EL BLOG</h3>
+                    <p>Benvinguts a <strong>Cinesa</strong>, el teu espai de confiança per trobar pel·lícules quan no saps què veure. Aquesta web neix amb l'objectiu de recopilar les millors experiències visuals que he tingut, des de clàssics de l'animació com Studio Ghibli fins a les darreres estrenes de la cartellera.</p>
+                    <p>Aquest és un espai on trobaràs recomanacions amb valoració personal, tràilers i un espai on deixar les teves recomanacions, comentaris i valoracions pròpies.</p>
+                </div>
+            </article>
+
+            <!-- TAULA CRITERIS DE VALORACIÓ-->
+            <article class="etiquetes-info">
+            <div class="peli-info">
+            <h3>GUIA DE VALORACIÓ</h3>
+            <p>Interpretació de la meva valoració sobre les pel·lícules que trobaràs en aquest blog:</p>
+        
+        <table class="valoracio-table">
+
+            <!-- Títols de la taula (categoríes) -->
+            <thead> 
+                <tr>
+                    <th>ESTRELLES</th> 
+                    <th>SIGNIFICAT I CRITERI</th>
+                </tr>
+            </thead>
+
+            <!-- Informació d ela taula -->
+            <tbody>
+                <tr>
+                    <td class="rating">★★★★★</td>
+                    <td><strong>Obra Mestra:</strong> Excel·lent pel·lícula. Una experiència audiovisual molt inmersiva. Et deixa amb ganes de tornar-la a veure i et fa refelexionar.</td>
+                </tr>
+                <tr>
+                    <td class="rating">★★★★☆</td>
+                    <td><strong>Molt Bona:</strong> Bona pel·lícula i molt recomanable. Fa que t'enganxis i tinguis ganes de saber com continúa.</td>
+                </tr>
+                <tr>
+                    <td class="rating">★★★☆☆</td>
+                    <td><strong>Entretinguda:</strong> És entretinguda i té escenes bones. Compleix amb la volutat d'entretindre.</td>
+                </tr>
+                <tr>
+                    <td class="rating">★★☆☆☆</td>
+                    <td><strong>Regular:</strong> Té alguna escena interessant però es fa pessada.</td>
+                </tr>
+                <tr>
+                    <td class="rating">★☆☆☆☆</td>
+                    <td><strong>Dolenta:</strong> No la tornaría a veure.</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+            </article>
+
+            <article class="etiquetes-info">
+                <div class="peli-info">
+                    <h3>PRÒXIMAMENT A LA CARTELLERA</h3>
+                    <p>Aquestes són les properes crítiques que estic preparant:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px; color: #ff007f;">
+                        <li>Torrente Presidente</li>
+                        <li>Your name.</li>
+                        <li>La Princesa Mononoke (Cicle Studio Ghibli)</li>
+                    </ul>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p> BLOG DE PEL·LÍCULES</p>
+        <p> cinesa@gmail.com</p>
+    </footer>
+    <a href="#" id="backToTop">⬆</a>
+
+    <script>
+    // Codi per a que només surti quan baixes //
+        const btn = document.getElementById("backToTop");
+
+     window.onscroll = function() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            btn.style.display = "flex"; // Surt quan baixes 400px //
+        } else {
+            btn.style.display = "none"; // S'oculta quan estàs a dalt de la pàgina //
+        }
+        };
+    </script>
+
+
+</body>
+
+</html>

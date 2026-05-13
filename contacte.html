@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog de Pel·lícules - Mapes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="estils.css">
+</head>
+
+<body class="formulari">
+ <!-- Capçalera -->
+    <header>
+        <h1>Cinesa</h1>
+        <p class="subtitol">DEIXA LA TEVA OPINIÓ</p>
+    </header>
+
+<!-- Menú de selecció (botons de navegació) -->
+    <nav>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="infogeneral.html">Informació</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mapacine.html">Mapa</a></li>
+        <li><a href="sortides.html">Sortides</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+    </ul>
+</nav>
+
+<h2>QUI SOC?</h2>
+
+    <div class="etiquetes-personal">
+        <h3>Sara Laguna del Puerto, 20 anys</h3>
+        <div>
+            <p class="biografia">Sóc una persona apassionada del cinema, d'aquelles que troben en cada pel·lícula una nova manera d'explorar el món i les emocions. M'encanta deixar-me portar per les històries, descobrir personatges que semblen reals i viatjar sense moure'm del sofà. Per mi, veure una pel·lícula és molt més que passar l'estona: és una experiència que pot fer-te riure, plorar o repensar la manera com entens la vida.
+               Sempre he cregut que el cinema té una màgia especial. Hi ha pel·lícules que et deixen sense paraules, que et commouen d'una manera inesperada o que et fan veure les coses des d'una perspectiva diferent. I és precisament això el que busco: trobar aquelles històries que deixen empremta, que et fan sentir una mica més viu quan s'encenen els crèdits finals.</p>
+            <p class="biografia">En aquest blog comparteixo les meves recomanacions i impressions, no com una crítica experta, sinó com algú que estima el cinema i gaudeix parlant-ne. M'agrada pensar que cada pel·lícula té alguna cosa per dir, i aquí intento donar-li espai a totes aquelles que m'han fet sentir, pensar o somiar.</p>
+        </div>
+
+        <div>
+            <h3>Contacta amb mí</h3>
+            <p class="correu"><strong class="negreta">Adreça electrònica:</strong> cinesa@gmail.com</p>
+        </div>
+    </div>
+
+
+
+<h2>PARLA'M DE TÚ</h2>
+<div class="etiquetes-personal">
+<form>
+    <div id="column1" class="column">
+            
+        <h3>Sobre tú</h3>
+
+            Nom:<br>
+            <input type="text" name="Firstname"><br>
+            Cognom:<br>
+            <input type="text" name="Lastname">
+            
+        <h3>La teva edat</h3>
+            <input type="number" name="num" value="5" min="0" max="100">
+    </div>
+
+    <div id="column2"class="column">
+
+            <h3>Sexe</h3>
+            <input type="radio" name="gender" value="male" checked> Dona<br>
+            <input type="radio" name="gender" value="female"> Home <br>
+            <input type="radio" name="gender" value="female"> Prefereixo no dir-ho <br>
+
+            <h3>Categoríes que més t'interessen</h3>
+            <input type="checkbox" name="categoria1" value="Romàntic">
+                Romàntic<br>
+            <input type="checkbox" name="categoria2" value="Drama">
+                Drama<br>
+             <input type="checkbox" name="categoria3" value="Comèdia">
+                Comèdia<br>
+             <input type="checkbox" name="categoria4" value="Sci-fi">
+                Sci-fi<br>
+             <input type="checkbox" name="categoria5" value="Terror">
+                Terror<br>
+             <input type="checkbox" name="categoria6" value="Aventura">
+                Aventura<br>  
+             <input type="checkbox" name="categoria7" value="Històric">
+                Històric<br>
+             <input type="checkbox" name="categoria8" value="Animació">
+                Animació<br>
+    </div>
+
+    <div id="column3"class="column">
+        <!--Barra de satisfacció arrosegar-->
+        <h3>Satisfacció amb la web</h3>
+            0
+                <input type="range" name="points" value="5" min="0" max="100">
+            10
+
+            <h3>Comentaris</h3>
+            <textarea></textarea>
+            <p class="comentaris">**Aquí pots deixar recomanacions, opinions, crítiques...</p>
+
+        <!--Botó d'enviar-->
+            <button type="submit" class="enviar">Envía</button>
+    </div>
+</div>
+        
+</form>
+
+    <footer>
+        <p> BLOG DE PEL·LÍCULES</p>
+        <p> cinesa@gmail.com</p>
+    </footer>
+    <a href="#" id="backToTop">⬆</a>
+
+    <script>
+    // Codi per a que només surti quan baixes //
+        const btn = document.getElementById("backToTop");
+
+     window.onscroll = function() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            btn.style.display = "flex"; // Surt quan baixes 400px //
+        } else {
+            btn.style.display = "none"; // S'oculta quan estàs a dalt de la pàgina //
+        }
+        };
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog de Pel·lícules - Mapes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estils.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Estil per als popups per assegurar que es vegin bé amb el teu disseny */
+        .leaflet-popup-content-wrapper {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: 1px solid #ff6ab4;
+        }
+        .leaflet-popup-tip {
+            background-color: #ffffff;
+        }
+        .leaflet-popup-content table {
+            width: 100%;
+            color: rgb(1, 1, 1);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cinesa</h1>
+        <p class="subtitol">CINEMES DE LA PROVÍNCIA DE TARRAGONA</p>
+    </header>
+
+   <nav>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="infogeneral.html">Informació</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mapacine.html">Mapa</a></li>
+        <li><a href="sortides.html">Sortides</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+    </ul>
+</nav>
+
+    <main>
+        <h2 class="titol-mapa">EXPLORA ELS CINEMES DE LA PROVÍNCIA</h2>
+        <div id="map" class="recuadre-mapa" style="height: 600px; width: 95%; max-width: 1200px; margin: 20px auto;"></div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // 1. Inicialitzem el mapa centrat a la província de Tarragona (zoom 9 per veure-ho tot)
+        var map = L.map('map').setView([41.1189, 1.2445], 9);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 2. Llistat de cinemes amb les seves coordenades i el teu HTML de popup
+        var cinemes = [
+            {
+                coords: [41.1165, 1.2393],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">YELMOCINES (Parc Central)</h3><table><tr><td><b>📍 Direcció:</b></td><td>C.C. Parc Central, C/ Vidal i Barraquer, 15-17, 43005 Tarragona</td></tr><tr><td><b>🚗 Parking:</b></td><td>Pàrquing del Centre Comercial (Gratuït primera hora)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/yelmo_tgn.jpg" alt="Imatge Yelmo Parc Central" width="300" height="200"><br><br><a href="https://yelmocines.es/cartelera/tarragona/parc-central" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.1402, 1.2173],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">OCINE (Les Gavarres)</h3><table><tr><td><b>📍 Direcció</b></td><td>C.C. Les Gavarres, A-7, s/n, 43006 Tarragona</td></tr><tr><td><b>🚗 Parking:</b></td><td>Gratuït (Exterior i Interior)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/ocine_gavarres.jpg" alt="Imatge OCINE Les Gavarres" width="300" height="200"><br><br><a href="https://www.ocine.es/tarragona-les-gavarres" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.1594, 1.1111],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Cines Axion (Reus)</h3><table><tr><td><b>📍 Direcció:</b></td><td>C.C. La Fira, Av. de Sant Jordi, 6, 43201 Reus</td></tr><tr><td><b>🚗 Parking:</b></td><td>Pàrquing Centre Comercial (Soterrani)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/axion_reus.jpg" alt="Imatge Cines Axion Reus" width="300" height="200"><br><br><a href="https://www.cinesaxion.com/reus/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [40.7067, 0.5828],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">UCC Amposta Cinemes 11</h3><table><tr><td><b>📍 Direcció:</b></td><td>Av. de la Ràpita, 240, 43870 Amposta</td></tr><tr><td><b>🚗 Parking:</b></td><td>Gratuït (Exterior ample)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/ucc_amposta.jpg" alt="Imatge UCC Amposta Cinemes" width="300" height="200"><br><br><a href="https://ampostacinemes.com/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.0664, 1.0604],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Rambla de l'Art (Cambrils)</h3><table><tr><td><b>📍 Direcció:</b></td><td>Carrer de l'Aigua, 7, 43850 Cambrils</td></tr><tr><td><b>🚗 Parking:</b></td><td>Zona blava / Pàrquing municipal proper</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Espai adaptat</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres i dijous (Cine d'autor / VOSE)</td></tr></table><br><img src="imatges/rambla_art.jpg" alt="Imatge Rambla de l'Art" width="300" height="200"><br><br><a href="https://rambladelaart.com/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [40.8211, 0.5055],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Ocine Premium Roquetes</h3><table><tr><td><b>📍 Direcció:</b></td><td>Polígon Pla de l'Estació, s/n, 43520 Roquetes</td></tr><tr><td><b>🚗 Parking:</b></td><td>Gratuït (Pàrquing del recinte exterior)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Totalment adaptat (Seients Premium i VIP)</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/ocine_roquetes.jpg" alt="Imatge Ocine Premium Roquetes" width="300" height="200"><br><br><a href="https://www.ocine.es/cinemes/roquetes/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.2145, 1.5312],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">OCINE El Vendrell</h3><table><tr><td><b>📍 Direcció:</b></td><td>Polígon Les Mates, Carrer dels Traginers, 5, 43700 El Vendrell</td></tr><tr><td><b>🚗 Parking:</b></td><td>Gratuït (Zona comercial)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/ocine_vendrell.jpg" alt="Imatge OCINE El Vendrell" width="300" height="200"><br><br><a href="https://www.ocine.es/cinemes/el-vendrell/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.0847, 1.1555],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">OCINE (Vila-seca)</h3><table><tr><td><b>📍 Direcció:</b></td><td>C.C. Port Halley, Av. Alcalde Pere Molas, s/n, 43480 Vila-seca</td></tr><tr><td><b>🚗 Parking:</b></td><td>Gratuït (Exterior ample)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/ocine_vilaseca.jpg" alt="Imatge OCINE Vila-seca" width="300" height="200"><br><br><a href="https://www.ocine.es/cinemes/vila-seca/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.1917, 1.5794],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">MCB Cinemas</h3><table><tr><td><b>📍 Direcció:</b></td><td>Rambla de la Costa Daurada, 43820 Calafell</td></tr><tr><td><b>🚗 Parking:</b></td><td>Gratuït (Exterior) i zones blanques properes</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/mcb_calafell.jpg" alt="Imatge MCB Cinemas" width="300" height="200"><br><br><a href="https://www.mcbcinemascalafell.com/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.2844, 1.2511],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">JCA CINEMES (Valls)</h3><table><tr><td><b>📍 Direcció:</b></td><td>Carrer de la Vallvera, 16, 43800 Valls</td></tr><tr><td><b>🚗 Parking:</b></td><td>Pàrquing en zona urbana</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales adaptades per a mobilitat reduïda</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Dimecres (preu reduït)</td></tr></table><br><img src="imatges/jca_valls.jpg" alt="Imatge JCA Cinemes Valls" width="300" height="200"><br><br><a href="https://www.jcacinemes.com/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [40.8753, 0.6621], // El Perelló
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Cinema Victoria</h3><table><tr><td><b>📍 Direcció:</b></td><td>Carrer de la Victoria, El Perelló</td></tr><tr><td><b>🚗 Parking:</b></td><td>Zona urbana (Aparcament al carrer)</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Accés a peu de carrer</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Consultar cartellera local</td></tr></table><br><img src="imatges/cinema_victoria.jpg" alt="Imatge Cinema Victoria" width="300" height="200">`
+            },
+            {
+                coords: [41.4005, 1.0505],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Cinema Foment Vimbodí i Poblet</h3><table><tr><td><b>📍 Direcció:</b></td><td>Carrer de l'Església, 43430 Vimbodí i Poblet</td></tr><tr><td><b>🚗 Parking:</b></td><td>Zona urbana</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Accés principal habilitat</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Projeccions de cap de setmana</td></tr></table><br><img src="imatges/cinema_vimbodi.jpg" alt="Imatge Cinema Foment Vimbodí" width="300" height="200">`
+            },
+            {
+                coords: [41.2105, 1.2005],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Cinema de Vilallonga (Centre Recreatiu)</h3><table><tr><td><b>📍 Direcció:</b></td><td>Ctra. de Valls, 1, 43141 Vilallonga del Camp</td></tr><tr><td><b>🚗 Parking:</b></td><td>Aparcament als carrers propers</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Sales accessibles a la planta baixa</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Consultar programació local (Cicle Gaudí / CineXic)</td></tr></table><br><img src="imatges/cinema_vilallonga.png" alt="Imatge Cinema de Vilallonga" width="300" height="200"><br><br><a href="https://www.vilallongadelcamp.cat/tag/centre-recreatiu/" target="_blank">Veure Cartellera i Web</a>`
+            },
+            {
+                coords: [41.3761, 1.1619],
+                html: `<h3 style="color: #e50914; font-size: 1.2rem;">Cine Casal Montblanc</h3><table><tr><td><b>📍 Direcció:</b></td><td>Muralla de Santa Tecla, 43400 Montblanc</td></tr><tr><td><b>🚗 Parking:</b></td><td>Pàrquing municipal proper a la muralla</td></tr><tr><td><b>♿ Accesibilitat:</b></td><td>Accés a la planta baixa</td></tr><tr><td><b>🎟️ Dia Espectador:</b></td><td>Projeccions d'estrena caps de setmana</td></tr></table><br><img src="imatges/casasl_montblanc.jpeg" alt="Imatge Casal Montblanc" width="300" height="200"><br><br><a href="https://www.montblanc.cat/" target="_blank">Més Informació</a>`
+            }
+        ];
+
+        // 3. Afegim tots els cinemes al mapa recorrent l'array
+        cinemes.forEach(function(cinema) {
+            L.marker(cinema.coords)
+                .addTo(map)
+                .bindPopup(cinema.html, { maxWidth: 320 });
+        });
+
+    </script>
+
+    <footer>
+        <p> BLOG DE PEL·LÍCULES</p>
+        <p> cinesa@gmail.com</p>
+    </footer>
+    <a href="#" id="backToTop">⬆</a>
+</body>
+</html>
