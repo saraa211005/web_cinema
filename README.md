@@ -1,66 +1,54 @@
-# Cinesa - El teu Blog de Cinema
+# Cinesa: Blog de Pel·lícules
 
-**Cinesa** és un projecte web interactiu dedicat al cinema, centrat en la publicació de crítiques cinematogràfiques, la visualització de cartelleres i la geolocalització de sales de cinema a la província de Tarragona.
-
-Aquest projecte combina una estètica visual moderna amb funcionalitats avançades de cartografia i un disseny totalment adaptat a dispositius mòbils. A més de ser un espai d'interacció a través de la pantalla, també es busca una interacció social personal a través de sortides a cinemes a veure estrens o a festivals cinematogràfics.
-
-El Blog neix de la passió personal pel cinema i de la voluntat d'unir el desenvolupament web amb la cartografia digital. La motivació principal ha estat crear una plataforma que no només serveixi com a diari de crítiques cinematogràfiques, sinó també com una eina útil per a la comunitat de la província de Tarragona. Mitjançant la integració de mapes interactius, l'objectiu és facilitar la descoberta de sales de cinema locals i fomentar l'interès per la cultura cinematogràfica des d'una vessant pràctica i visual.
-
-## Característiques Detallades
-
-### 1. Crítiques i Valoracions Personalitzades
-* **Anàlisi de Contingut:** El lloc web presenta ressenyes aprofundides (com la d' *El viatge de Chihiro*) que inclouen una breu fitxa tècnica i comentaris personals, a més d'un enllaç que et permet veure el tráiler de la pel·lícula.
-* **Sistema de Puntuació:** S'ha implementat un sistema visual de 5 estrelles (★☆☆☆☆) per categoritzar les pel·lícules des de "Dolenta" fins a "Mestra", permetent una comprensió ràpida de la qualitat de la pel·lícula.
-* **Secció Pròximament:** Un espai dinàmic on s'anuncien les futures entrades del blog, generant expectació sobre nous cicles com el de Studio Ghibli.
-
-### 2. Mapes Interactius (Geolocalització)
-Utilitzant la llibreria **Leaflet.js**, el projecte ofereix una experiència geoespacial:
-* **Mapa de Cinemes:** Localització exacta de cinemes de la província de Tarragona (Vilallonga del Camp, Montblanc, etc.) amb finestres emergents (*popups*) que mostren horaris, preus i fotos reals de les sales.
-* **Rutes de Sortida:** Una funcionalitat específica per visualitzar rutes cinèfiles (ex: trajecte Tarragona - Altafulla) mitjançant línies de recorregut (*polylines*) personalitzades amb l'estil visual del web.
-
-### 3. Galeria i Interactivitat
-* **Mural de Portades:** Una galeria d'imatges (portades de pel·lícules) organitzada per gèneres que permet a l'usuari explorar visualment el contingut.
-* **Formulari de Feedback:** Inclou controls avançats com barres de satisfacció, selectors de gèneres preferits i àrees de text per a recomanacions.
-* **Navegació Millorada:** Incorporació d'un botó "Back to Top" amb JavaScript que apareix en fer *scroll*, facilitant el retorn a la part superior de la pàgina.
+**Projecte de Producció i Disseny Cartogràfic** **Autora:** Sara Laguna Del Puerto  
+**Curs:** 2025-2026
 
 ---
 
-## Disseny Responsiu (Responsive Design)
+## Tema i motivació
+**Cinesa** és un blog cinematogràfic creat amb l'objectiu de guiar els espectadors a l'hora de triar quina pel·lícula veure. La web conté crítiques, recomanacions i informació sobre l'actualitat del cinema.
 
-El projecte s'ha construït sota la premisa de la comoditat i l'estilització, assegurant que la interfície sigui intuïtiva en qualsevol mida de pantalla.
+El projecte té un clar **vincle amb la geografia** mitjançant la cartografia interactiva. No només es recomana què veure, sinó que es facilita la localització física de les sales de cinema de la província de Tarragona i la planificació de sortides a festivals locals (com l'Altafulla International Film Festival).
 
-### Menú Hamburguesa
-En pantalles de mòbil o tauleta, el menú de navegació tradicional es transforma en un **menú lateral desplegable**.
-* S'ha utilitzat la tècnica del `checkbox hack` (`#menu-toggle`) per controlar l'obertura i tancament del menú sense dependre exclusivament de JavaScript.
+## Dades i Recursos
+Per a la realització del projecte s'han utilitzat les següents fonts i tecnologies:
+* **Fonts d'informació:** Crítiques de redacció pròpia, dades d'ubicació de cinemes de Tarragona i materials docents de la URV.
+* **Recursos visuals:** Imatges i cartells obtinguts de repositoris digitals i Pinterest.
+* **Tecnologies:** HTML5, CSS3 (ús intensiu de **Grid Layout**) i JavaScript.
+* **Cartografia:** Biblioteca de codi obert [Leaflet.js](https://leafletjs.com/).
 
-### Adaptabilitat del Contingut (Media Queries)
-Mitjançant l'ús de CSS modern i punts de tall (*breakpoints*) a `768px`:
-* **Graelles Flexibles:** Els elements de la galeria i les columnes dels formularis es reordenen automàticament de forma vertical en pantalles estretes per evitar el desplaçament horitzontal.
-* **Imatges Fluides:** L'ús de `background-size: cover;` i `background-attachment: fixed;` permet que les imatges de fons mantinguin la seva qualitat i posició  en qualsevol resolució.
-* **Tipografia Adaptada:** Les mides de font s'ajusten per mantenir la llegibilitat tant en monitors de sobretaula com en pantalles de telèfons intel·ligents.
+## Estructura de la Web
+La web es divideix en 6 seccions principals:
+1.  **Inici (`index.html`):** Presentació i recomanacions destacades com *Whiplash* o *El viatge de Chihiro*.
+2.  **Informació (`infogeneral.html`):** Explicació del funcionament del blog, qui sóc i una guia visual de valoració per estrelles.
+3.  **Galeria (`galeria.html`):** Recull visual de portades organitzades per gèneres (Terror, Aventura, Drama, Animació, etc.).
+4.  **Mapa (`mapacine.html`):** Mapa interactiu amb marcadors dels cinemes i filmoteques de la zona.
+5.  **Sortides (`sortides.html`):** Espai dedicat a esdeveniments culturals itinerants amb rutes cartografiades.
+6.  **Contacte (`contacte.html`):** Formulari complet per rebre feedback i preferències dels usuaris.
+
+## Disseny Web Responsive
+S'ha aplicat un disseny adaptatiu per garantir que la web es vegi correctament en qualsevol dispositiu (mòbil, tauleta o PC):
+* **CSS Grid:** S'utilitzen columnes flexibles que es reordenen automàticament.
+* **Media Queries:** S'han definit punts de ruptura a `1024px` i `768px` per modificar el layout.
+* **Imatges:** Gestió de l'alçada fixa (`height`) i `object-fit: cover` a la galeria per mantenir l'harmonia visual sense deformar els cartells.
+* **Accessibilitat:** Menú desplegable lateral (hamburger menu) per a mòbils i contrastos de color (rosa sobre negre) per a una lectura clara.
+
+## Cartografia
+La integració cartogràfica s'ha realitzat mitjançant **Leaflet**:
+* **Mapes de cinemes:** Inclouen popups personalitzats amb informació sobre la direcció, el pàrquing, l'accessibilitat i imatges reals de cada establiment.
+
+* **Mapa sortida a Altafulla:** Inclou popus en els punts de trobada i informació addicional útil per al dia de la sortida (Hora de sortida de l'autobús, direcció concreta dels punts de trobada...)
+
+## Dificultats i Millores
+* **Dificultats:** Els reptes principals han estat la configuració dels popups de Leaflet per a que fossin responsius i la coordinació dels elements del formulari de contacte en pantalles petites. 
+He tingut problemes a l'hora de treballar amb qgis2web ja que quan volís visualitzar la meva composició només hem deixaba treballar amb la línea (la ruta) i no hem permetía veure ni els punts, ni els popup.  
+
+Fer la web responsiva també m'ha suposat un repte perque molts cops no aconseguía els resultats que esperaba. Amb l'ajut de la ia he pogut millorar aquests aspectes però encara falta millora.
+
+* **Millores futures:** * 
+    * Millorar el disseny responsive.
+    * Possibilitat que els usuaris puguin puntuar directament les pel·lícules des de la web i a poder ser, crear un espai d'interacció social on la gent pugui pubicar les seves recomanacions i critiques.
+    * Afegir el mapa a partir de qgis2web amb la ruta ben delimitada acord amb el recorregut del       autobús.
 
 ---
-
-## Tecnologies Utilitzades
-
-* **HTML5:** Estructura base de la web i accessibilitat.
-* **CSS3:** Disseny avançat amb degradats, animacions i *Media Queries*.
-* **JavaScript:** Control de l'interactivitat (p.e. Tornar a dalt).
-* **Leaflet API:** Motor de mapes interactius.
-* **Google Fonts:** Tipografies *Playfair Display* (elegància) i *Montserrat* (modernitat).
-
-## Estructura de Fitxers
-
-* `index.html` - Pàgina principal i crítiques.
-* `infogeneral.html` - Sistema de puntuació i horaris.
-* `galeria.html` - Mural visual de pel·lícules.
-* `mapacine.html` - Mapa de cinemes de Tarragona.
-* `sortides.html` - Traçat d'una ruta cinèfila.
-* `contacte.html` - Formulari d'opinió.
-* `estils.css` - Full d'estils centralitzat i responsive.
-
-## Autora
-Creat per **Sara Laguna** (2026).
-
----
-*Aquest projecte ha estat creat amb finalitats acadèmiques/personals per explorar el desenvolupament web. S'ha desenvolupat en el marc de l'assignatura de **Producció i Disseny Cartogràfic** a la Universitat Rovira i Virgili.*
+*Facultat de Turisme i Geografia - Universitat Rovira i Virgili*
