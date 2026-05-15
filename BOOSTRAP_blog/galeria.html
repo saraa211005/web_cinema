@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>GALERIA · Blog Cinesa</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/blog/"
+    />
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="blog.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol
+        id="aperture"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path
+          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+        ></path>
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        ></path>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a class="link-secondary" href="#">Subscriu-te</a>
+          </div>
+          <div class="col-4 text-center">
+            <a
+              class="blog-header-logo text-body-emphasis text-decoration-none"
+              href="#"
+              >CINESA</a
+            >
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="mx-3"
+                role="img"
+                viewBox="0 0 24 24"
+              >
+                <title>Search</title>
+                <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                <path d="M21 21l-5.2-5.2"></path>
+              </svg>
+            </a>
+            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+          </div>
+        </div>
+      </header>
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis" href="index.html">Inici</a>
+          <a class="nav-item nav-link link-body-emphasis active" href="galeria.html">Galeria</a>
+          <a class="nav-item nav-link link-body-emphasis" href="../mapacine.html">Mapes</a>
+          <a class="nav-item nav-link link-body-emphasis" href="../sortides.html">Sortida</a>
+          <a class="nav-item nav-link link-body-emphasis" href="../contacte.html">Contacte</a>
+        </nav>
+      </div>
+    </div>
+      
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/whiplash.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>WHIPLASH (2014)</b></p>
+                  <h6 class="aclariment">Drama/Cine independent</h6>
+                  <p class="card-text">
+                    Andrew Neiman és un jove i ambiciós bateria de jazz. Marcat pel 
+                    fracàs de la carrera literària del seu pare, està obsessionat amb 
+                    aconseguir el cim dins de l'elitista conservatori de música de la 
+                    Costa Est en el qual estudia.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">1h 47m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/7hermanas.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>7 GERMANES (2017)</b></p>
+                  <h6 class="aclariment">Acció/Ciència ficció</h6>
+                  <p class="card-text">
+                    En un futur en el qual la sobrepoblació i la fam han obligat el 
+                    govern a implantar una política d'un únic fill, set germanes, cadascuna 
+                    amb el nom d'un dia de la setmana, lluiten per sobreviure i passar 
+                    inadvertides fent-se passar per una sola persona. 
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">2h 3m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/FRANKENSTEIN.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+
+                <div class="card-body">
+                  <p><b>FRANKENSTEIN (2025)</b></p>
+                  <h6 class="aclariment">Terror/Ciència ficció</h6>
+                  <p class="card-text">
+                    El científic Víctor Frankenstein dona vida a una criatura acoblada 
+                    amb cadàvers. Horroritzat per la seva creació, Víctor l'abandona, 
+                    provocant que l'ésser, intel·ligent però solitari, busqui venjança 
+                    contra ell i la seva família després de ser rebutjat per la societat.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★☆</p>
+                    </div>
+                    <small class="text-body-secondary">2h 30m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/TITANIC.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>TITÀNIC (1997)</b></p>
+                  <h6 class="aclariment">Romàntic/Aventura</h6>
+                  <p class="card-text">
+                     Dos joves de diferents classes socials, Jack (un artista humil) i Rose 
+                     (una jove de classe alta), s'enamoren en el viatge inaugural del Titanic 
+                     malgrat les traves que posen la mare d'ella i Calç en la seva relació. Però
+                    el destí d'aquest amor es veu truncat per un iceberg.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">3h 14m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/vidabella.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>LA VIDA ÉS BELLA (1997)</b></p>
+                  <h6 class="aclariment">Bèl·lic/Comèdia</h6>
+                  <p class="card-text">
+                    En 1939, Guido arriba a Arezzo amb la intenció d'obrir una llibreria. 
+                    Allí coneix a Dora amb la que es casarà i tindràn un fill. Durant la guerra,
+                    Guido construeix una elaborada fantasia per a protegir el seu fill i fer-li 
+                    creure que la situació és tan sols un joc.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">1h 56m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/diariodenoah.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>EL DIARI DE NOAH (2004)</b></p>
+                  <h6 class="aclariment">Romàntic/Drama</h6>
+                  <p class="card-text">
+                    En una residència, un ancià li llegeix a una dona la història
+                    de Noah i Allie, dos joves de Carolina del Nord, de diferents 
+                    classes socials que van viure un apassionat amor d'estiu abans 
+                    de ser separats per les seves famílies i la guerra.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">2h 1m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/SADNESS.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>THE SADNESS(2021)</b></p>
+                  <h6 class="aclariment">Terror/Acció</h6>
+                  <p class="card-text">
+                    Una jove parella intenta retrobar-se en una ciutat devastada per un 
+                    virus mutant. Aquesta plaga anul·la la moral i converteix les víctimes
+                     en sàdics assedegats de sang, totalment conscients dels seus actes. 
+                     Mentre la societat col·lapsa, hauran de sobreviure al malson.
+                  </p>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★☆</p>
+                    </div>
+                    <small class="text-body-secondary">1h 40m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/NORESPIRES.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>NO RESPIRES (2016)</b></p>
+                  <h6 class="aclariment">Terror/Crim</h6>
+                  <p class="card-text">
+                    Rocky, Alex i Mone preparen un robatori, el que permetrà a Rocky 
+                    sortir de Detroit i salvar a la seva germana petita del maltractament 
+                    de la seva mare. El seu següent objectiu serà la casa mig abandonada 
+                    d'un home cec que és posseïdor d'una petita fortuna.
+                  </p>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">1h 28m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/lavisita.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>ELS HOSTES (2015)</b></p>
+                  <h6 class="aclariment">Terror/Misteri</h6>
+                  <p class="card-text">
+                    Dos germans passen una setmana en la granja dels seus avis. Els nens 
+                    descobreixen que la parella anciana amaga
+                    un secret misteriós i que estan implicats en un esdeveniment inquietant.
+                    Les possibilitats de fugir cada cop són menys.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★☆</p>
+                    </div>
+                    <small class="text-body-secondary">1h 34m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/POLAREXPRESS.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>THE POLAR EXPRESS (2004)</b></p>
+                  <h6 class="aclariment">Infantil/Aventura</h6>
+                  <p class="card-text">
+                    És Nadal, i un nen intenta sentir la dringadissa de les campanetes 
+                    del trineu de Santa Claus. A només cinc minuts per a la mitjanit, 
+                    un soroll sobresalta al noi: un lluent tren negre frena enfront de 
+                    la seva casa per a portar-ho al Pol Nord.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">1h 40m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/MONSTERHOUSE.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>MONSTER HOUSE (2006)</b></p>
+                  <h6 class="aclariment">Terror/Comèdia</h6>
+                  <p class="card-text">
+                    D.J. Walters està convençut que a la casa d'un veí ocorre una cosa estranya. 
+                    Quan la seva amiga Jenny està a punt de ser engolida per la misteriosa casa, 
+                    ningú creï als espantats nois; així que decideixen investigar l'enigma pel 
+                    seu compte.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">1h 31m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="../imatges/CORALINE.jpg" 
+                  class="card-img-top" 
+                  alt="Descripción de la película" 
+                  style="height: 500px; object-fit: cover;">
+                <div class="card-body">
+                  <p><b>CORALINE (2009)</b></p>
+                  <h6 class="aclariment">Infantil/Terror</h6>
+                  <p class="card-text">
+                     Coraline és una jove avorrida que descobreix que la paret 
+                     tapiada després d'una porta del seu pis condueix a un altre món, 
+                     amb una altra mare i un altre pare. Coraline haurà de confiar en el seu 
+                     enginy i valentia per a tornar a casa i salvar a la seva família.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <p>★★★★★</p>
+                    </div>
+                    <small class="text-body-secondary">1h 40m</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+     <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+      <p>
+        Blog template built for
+        <a href="https://getbootstrap.com/">Bootstrap</a> by
+        <a href="https://x.com/mdo">@mdo</a>.
+      </p>
+      <p class="mb-0"><a href="#">Back to top</a></p>
+    </footer>
+    <script
+      src="../assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+  </body>
+</html>
