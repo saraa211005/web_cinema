@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <meta name="referrer" content="no-referrer-when-downgrade">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -264,8 +267,7 @@
         <nav class="nav nav-underline justify-content-between">
           <a class="nav-item nav-link link-body-emphasis" href="index.html">Inici</a>
           <a class="nav-item nav-link link-body-emphasis" href="galeria.html">Galeria</a>
-          <a class="nav-item nav-link link-body-emphasis active" href="mapes.html">Mapes</a>
-          <a class="nav-item nav-link link-body-emphasis" href="sortides.html">Sortida</a>
+          <a class="nav-item nav-link link-body-emphasis active" href="mapes.html">Mapes i sortides</a>
           <a class="nav-item nav-link link-body-emphasis" href="contacte.html">Contacte</a>
         </nav>
       </div>
@@ -291,11 +293,10 @@
             
             <h2 class="fw-normal">ALT IFF</h2>
             <p>
-              Another exciting bit of representative placeholder content. This
-              time, we've moved on to the second column.
+              Sortida de tarda a l'Altafulla International Film Festival, 2026.
             </p>
             <p>
-              <a class="btn btn-secondary" href="#">View details &raquo;</a>
+              <a class="btn btn-secondary" href="#">Saber més &raquo;</a>
             </p>
           </div>
           <!-- /.col-lg-4 -->
@@ -303,12 +304,12 @@
             
             <h2 class="fw-normal">Estrena BACKROOMS</h2>
             <p>
-              And lastly this, the third column of representative placeholder
-              content.
+              Atenció, cinèfils! Amb motiu de la propera estrena de la pel·lícula 
+              Backrooms (el 5 de juny), estem valorant organitzar una nova sortida 
+              al cinema en grup. T'hi apuntaries? Estigues atent a les pròximes 
+              actualitzacions de la web per saber-ne tots els detalls.
             </p>
-            <p>
-              <a class="btn btn-secondary" href="#">View details &raquo;</a>
-            </p>
+            
           </div>
           <!-- /.col-lg-4 -->
         </div>
@@ -353,8 +354,9 @@
               SORTIDA: Altafulla International Film Festival
             </h2>
             <p class="lead">
-              Aquesta sortida està dissenyada per als amants del cinema d'autor i la cultura, 
-              combinant el setè art amb una experiència de descoberta del patrimoni local d'Altafulla.
+              Aquesta sortida està organitzada per assistir a l'Altafulla International Film Festival 
+             (ALT IFF) el dissabte 15 de maig del 2026. Consistirà en una sortida de tarda tranquil·la de 
+             16:30h a 22:00h de la nit.
             </p>
             <p class="lead"><strong>Itinerari de la sortida:</strong></p>
 
@@ -384,68 +386,28 @@
                     Debat sobre les obres vistes durant el trajecte de tornada a Tarragona.
                 </li>
             </ul>
-            
 
-
-          </div>
-          <div class="col-md-5 order-md-1">
-            <svg
-              aria-label="Placeholder: 500x500"
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              height="500"
-              preserveAspectRatio="xMidYMid slice"
-              role="img"
-              width="500"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-bg)"
-              ></rect>
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
-          </div>
-        </div>
-        <hr class="featurette-divider" />
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading fw-normal lh-1">
-              And lastly, this one.
-              <span class="text-body-secondary">Checkmate.</span>
-            </h2>
             <p class="lead">
-              And yes, this is the last block of representative placeholder
-              content. Again, not really intended to be actually read, simply
-              here to give you a better view of what this would look like with
-              some actual content. Your content.
+              Aquesta sortida està dissenyada per als amants del cinema d'autor i la cultura, 
+              combinant el cinema amb una experiència de descoberta del patrimoni local d'Altafulla.
             </p>
+
+            <form>
+                  <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSf_5WvTGSUW5iiuLvCQpECGP4iCV8mfoGd42CnuUfa1Apvk8Q/viewform?usp=preview" id="mapa-cinemes">INSCRIU-TE A LA SORTIDA! &raquo;</a>
+            </form>
+            
           </div>
-          <div class="col-md-5">
-            <svg
-              aria-label="Placeholder: 500x500"
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              height="500"
-              preserveAspectRatio="xMidYMid slice"
-              role="img"
-              width="500"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-bg)"
-              ></rect>
-              <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">
-                500x500
-              </text>
-            </svg>
+            <div class="col-md-5">
+              <div id="map-recorregut" 
+                  style="width: 100%; 
+                  height: 500px; 
+                  border-radius: 8px; 
+                  border: 1px solid #ccc;">
+              </div>
+            </div>
           </div>
         </div>
+
         <hr class="featurette-divider" />
         <!-- /END THE FEATURETTES -->
       </div>
@@ -526,6 +488,65 @@
                 .addTo(map)
                 .bindPopup(cinema.html, { maxWidth: 320 });
         });
+    </script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script>
+        // Inicializamos el mapa
+        var mapRecorregut = L.map('map-recorregut').setView([41.1315, 1.3089], 12);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(mapRecorregut);
+
+        var coordsTGN = [41.1194, 1.2443];
+        var coordsAltafulla = [41.1436, 1.3735];
+
+        // Popups
+        var popupTGN = `
+            <h5>Estació d'Autobusos de Tarragona</h5>
+            <table>
+                <tr><td><b>Direcció:</b></td><td>Plaça Imperial Tàrraco, 1, 43005 Tarragona</td></tr>
+                <tr><td><b>Accesibilitat:</b></td><td>Instal·lacions adaptades per a mobilitat reduïda</td></tr>
+                <tr><td><b>Hora de sortida de l’autobús:</b></td><td>16:30h</td></tr>
+            </table><br>
+            <img src="../imatges/estacio_bus_tarragona.jpg" alt="Imatge Estació d'Autobusos de Tarragona" width="300" height="200"><br><br>
+            <a href="https://www.tarragona.cat/mobilitat/transports/estacio-dautobusos" target="_blank">Veure Informació i Línies</a>
+        `;
+
+        var popupALT = `
+            <h5>Altafulla International Film Festival</h5>
+            <table>
+                <tr><td><b>Direcció:</b></td><td>Centre Cultural La Violeta, C/ de la Violeta, 2, 43893 Altafulla</td></tr>
+                <tr><td><b>Parking:</b></td><td>Pàrquing municipal proper (Escoles / Castell) i zona urbana</td></tr>
+            </table><br>
+            <img src="../imatges/alt_iff_altafulla.jpg" alt="Imatge Altafulla International Film Festival" width="300" height="200"><br><br>
+            <a href="https://altafullafilmfestival.com/" target="_blank">Visita la Web</a>
+        `;
+        L.marker(coordsTGN).addTo(mapRecorregut).bindPopup(popupTGN);
+        L.marker(coordsAltafulla).addTo(mapRecorregut).bindPopup(popupALT);
+
+        // CONFIGURACIÓN DE LA RUTA POR CARRETERA
+        L.Routing.control({
+            waypoints: [
+                L.latLng(coordsTGN),
+                L.latLng(coordsAltafulla)
+            ],
+            lineOptions: {
+                styles: [{ color: '#ff007f', weight: 5, opacity: 0.7, dashArray: '10, 10' }]
+            },
+            createMarker: function() { return null; }, // No duplica marcadores
+            addWaypoints: false,
+            draggableWaypoints: false,
+            show: false // Oculta el panel de texto con instrucciones
+        }).addTo(mapRecorregut);
     </script>
 
       <!-- FOOTER -->
