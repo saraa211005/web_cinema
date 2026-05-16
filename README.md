@@ -1,61 +1,56 @@
 # Cinesa: Blog de Pel·lícules
 
-**Projecte de Producció i Disseny Cartogràfic** **Autora:** Sara Laguna Del Puerto  
-**Curs:** 2025-2026
+**Projecte de Producció i Disseny Cartogràfic** 
+**Autora:** Sara Laguna Del Puerto  
+**Curs:** 2025-2026  
+**Institució:** Facultat de Turisme i Geografia - Universitat Rovira i Virgili  
 
 ---
 
 ## Tema i motivació
-**Cinesa** és un blog cinematogràfic creat amb l'objectiu de guiar els espectadors a l'hora de triar quina pel·lícula veure. La web conté crítiques, recomanacions i informació sobre l'actualitat del cinema.
+El projecte **Cinesa** neix amb l'objectiu principal de crear espai cinèfil que actui com una guia interactiva que ajudi els espectadors a triar quina pel·lícula veure i, alhora, on i com gaudir-ne en el seu entorn geogràfic real. Aquest blog combina la crítica cinematogràfica (subjectiva) amb la difusió d'informació de base territorial, responent a una motivació essencial, connectar l'oci i la cultura digital amb l'espai físic local.
 
-El projecte té un clar **vincle amb la geografia** mitjançant la cartografia interactiva. No només es recomana què veure, sinó que es facilita la localització física de les sales de cinema de la província de Tarragona i la planificació de sortides a festivals locals (com l'Altafulla International Film Festival).
+El públic objectiu de la plataforma abasta des de joves estudiants fins a aficionats sèniors al cinema de la regió de Tarragona. El **vincle amb la geografia** s'estableix a través de la incorporació de cartografia interactiva en l'entorn de l'usuari. No hem limito a oferir informació teòrica sobre pel·lícules, sinó que també exposo l'oferta de cinemes de la província i  planifico esdeveniments culturals itinerants i festivals locals (com l'Altafulla International Film Festival), actuant així com un dinamitzador territorial del turisme cultural de la zona.
 
-## Dades i Recursos
-Per a la realització del projecte s'han utilitzat les següents fonts i tecnologies:
-* **Fonts d'informació:** Crítiques de redacció pròpia, dades d'ubicació de cinemes de Tarragona i sinopsis i informació de fitxes tècniques de la web filmaffinity.
-* **Recursos visuals:** Imatges i cartells obtinguts de repositoris digitals i Pinterest. També videos recuperats de youtube.
-* **Tecnologies:** HTML5, CSS3 (ús intensiu de **Grid Layout**) i JavaScript.
-* **Cartografia:** Biblioteca de codi obert [Leaflet.js](https://leafletjs.com/).
+## Dades
+Per a la creació d'aquesta web he utilitzat dades procedents de diverses fonts:
+* **Dades Cinematogràfiques i Textos:** Les crítiques analítiques i valoracions són de redacció pròpia. Les sinopsis oficials, els gèneres, els anys de llançament i les fitxes tècniques s'han extret i adaptat de la base de dades de la plataforma especialitzada *Filmaffinity*.
+* **Dades de Geolocalització i Atributs dels Cinemes:** He utilitzat dades espacials de coordenades geogràfiques exactes, adreces postals, tarifes de descompte (Dia de l'Espectador), disponibilitat de serveis d'aparcament i condicions d'accessibilitat per a un total d'11 cinemes distribuïts per tota la província. Aquesta informació l'he obtinguda directament  dels webs oficials de cadascun dels cinemes actius a la regió (Yelmo, Ocine, Axion, MCB, JCA, Rambla de l'Art, etc.).
+* **Recursos Visuals i Multimèdia:** Els cartells promocionals i les imatges reals de les instal·lacions dels cinemes s'han obtingut de repositoris digitals d'accés lliure i de cerques a *Pinterest*. Els enllaços multimèdia i els codis de visualització connecten directament amb els clips i tràilers oficials allotjats a la plataforma *YouTube*.
+* **Eines i Recursos Tecnològics Utilitzats:**
+  * **Desenvolupament Web:** Escriptura de codi codificat en HTML5 per a l'estructura, CSS3 per a l'estil personalitzat i JavaScript per a la programació del comportament lògic i dels elements dinàmics.
+  * **Framework d'Estils:** Ús de la llibreria de components **Bootstrap 5.3** (generat sota l'entorn del framework de components Astro v5.13.2) com a base estructural i visual per agilitzar el desenvolupament i dotar les pàgines d'un acabat professional i coherent.
+  * **Eines Cartogràfiques i SIG:** Integració de la biblioteca de codi obert **Leaflet.js v1.9.4** a través del seu servidor de distribució de continguts (CDN) per a la representació cartogràfica interactiva en entorn web. Ús de l'extensió complementària **Leaflet Routing Machine** per a l'anàlisi de xarxes i el càlcul d'itineraris viaris. En l'etapa preliminar es va emprar el programari de Sistemes d'Informació Geogràfica de l'escriptori *QGIS* al costat de l'extensió *qgis2web* per a l'estudi de capes vectorials.
 
-## Estructura de la Web
-La web es divideix en 6 seccions principals:
-1.  **Inici (`index.html`):** Presentació i recomanacions destacades com *Whiplash* o *El viatge de Chihiro*.
-2.  **Informació (`infogeneral.html`):** Explicació del funcionament del blog, qui sóc i una guia visual de valoració per estrelles.
-3.  **Galeria (`galeria.html`):** Recull visual de portades organitzades per gèneres (Terror, Aventura, Drama, Animació, etc.).
-4.  **Mapa (`mapacine.html`):** Mapa interactiu amb marcadors dels cinemes de la zona.
-5.  **Sortides (`sortides.html`):** Espai dedicat a esdeveniments culturals itinerants amb rutes cartografiades.
-6.  **Contacte (`contacte.html`):** Formulari complet per rebre feedback i preferències dels usuaris.
+## Estructura de la web
+És una web força intuïtiva organitzada en 4 pàgines HTML totalment interconnectades a través de la capçalera de navegació, cadascuna d'elles dissenyada per respondre a uns continguts específics:
+1. **Inici (`index.html`):** Actua com a pàgina d'aterratge o *landing page*. Ofereix una introducció conceptual del blog, una secció personal de l'autora ("Sobre mi", Sara Laguna, 20 anys), una guia visual detallada que explica el sistema tipus rànquing d'estrelles daurades, un bloc d'avanços cinematogràfics vius amb llançaments futurs (com l'estrena de la pel·lícula "Backrooms" el 5 de juny de 2026) i elements d'enllaç ràpid a les funcionalitats territorials. S'ha estructurat mitjançant l'adaptació i redisseny del model *Blog* de Bootstrap, unificant el full d'estils general `blog.css`.
+2. **Galeria (`galeria.html`):** És un catàleg interactiu i visual que serveix d'aparador de les ressenyes i recomanacions. Prenent com a base l'estructura de tipus *Album* de Bootstrap, s'utilitza una graella adaptativa carregada de targetes informatives (*Cards*). Cada targeta recull el cartell d'una pel·lícula d'un ampli ventall de gèneres (com *Coraline*, drames independents, acció, terror o cinema bèl·lic), la fitxa tècnica (durada, gènere), la valoració de l'autora en estrelles daurades, una sinopsi detallada i un botó arrodonit de contorn (*rounded-pill*) personalitzat en color rosa neó que dirigeix a l'espectador al tràiler oficial a *YouTube*.
+3. **Mapes (`mapes.html`):** Conforma el nucli cartogràfic i l'aportació geogràfica del projecte. Aquesta pàgina conté dos grans visors espacials interactius inserits de forma consecutiva en l'estructura mitjançant blocs de la plantilla de "Featurettes" de Bootstrap:
+   * *Mapa de sales de cinema ("Troba el teu cinema"):* Visor a escala provincial centrat a Tarragona que geolocalitza amb marcadors puntuals un conjunt d'11 cinemes actius de la regió (Yelmo Parc Central, Ocine Les Gavarres, Cines Axion Reus, UCC Amposta, Rambla de l'Art de Cambrils, Ocine Premium Roquetes, Ocine El Vendrell, Ocine Vila-seca, MCB Cinemas Calafell, JCA Cinemes Valls i Cine Casal Montblanc). En clicar sobre qualsevol marcador, es desplega una bafarada (*Popup*) programat en codi HTML amb estil de taula de dades on es detalla la informació rellevant del recinte: adreça exacta, pàrquing disponible, condicions d'accessibilitat per a cadires de rodes, dia de l'espectador i una imatge fotogràfica de referència de la façana del cinema, juntament amb un enllaç exterior per obrir directament la seva cartellera actualitzada.
+   * *Mapa de Ruta ("ALT IFF 2026 - Recorregut a Altafulla"):* Trobem altre visor enfocat a la planificació d'esdeveniments geogràfics de lleure, que traça de manera dinàmica l'itinerari complet d'un viatge compartit organitzat amb autobús. Connecta l'Estació d'Autobusos de Tarragona (Plaça Imperial Tàrraco, detallant una hora de sortida fixa a les 16:30h) amb el recinte de celebració de l'Altafulla International Film Festival. Els marcadors d'origen i destí estan personalitzats amb finestres de dades d'horaris, fotografies i un botó de salt al web oficial del certamen cultural.
+4. **Contacte (`contacte.html`):** Formulari de recollida de dades que s'ha adaptat transformant per complet el disseny *Checkout* de Bootstrap. Substitueix els camps primaris de passarel·la de pagament per caixes d'entrada d'informació personal obligatòria (Nom, Nom d'usuari i Correu electrònic), controls selectors de tipus ràdio per concretar el motiu del missatge (com "Suggerir una pel·lícula per ressenyar" o "Consulta o suggeriment general") i una àrea de text lliure estructurada per al redactat del missatge de l'usuari amb elements de retroacció de validació interactiva en cas d'errors. La columna lateral s'aprofita com un panell d'informació amb el correu oficial del blog (`cinesara@gmail.com`), xarxes socials i enllaços directes. L'arxiu `checkout.css` garanteix la contenció i centrat perfecte del formulari.
 
-## Ús de Bootstrap 5.3.8 (Exemples i Plantilles)
-Per agilitzar el desenvolupament i assegurar un disseny professional i coherent, el projecte ha integrat i personalitzat diversos exemples oficials del framework **Bootstrap 5.3.8**, adaptant-los a les necessitats temàtiques del blog:
-
-* **Plantilla "Blog":** Ha servit com a estructura principal de la web (especialment a l'`index.html` i `mapes.html`). D'aquí s'ha aprofitat la capçalera (header) amb la tipografia *Playfair Display*, la barra de navegació desplaçable (nav-scroller) per a les categories de cinema, i l'estructura de "Featurettes" (blocs on alternen text i imatge/mapa) per presentar el contingut de forma visualment atractiva. L'arxiu `blog.css` dona la identitat visual corporativa a tota la pàgina.
-* **Plantilla "Album":** S'ha utilitzat a la secció de **Galeria** (`galeria.html`) per estructurar l'aparador de les pel·lícules. L'ús de les targetes ("Cards") d'aquest exemple ha estat ideal per mostrar de forma ordenada els cartells, les sinopsis, la valoració per estrelles i els botons d'acció (com l'enllaç al tràiler), aprofitant la quadrícula que s'adapta a qualsevol pantalla.
-* **Plantilla "Checkout":** S'ha implementat i transformat a la pàgina de **Contacte** (`contacte.html`). Tot i ser un disseny originalment pensat per a passarel·les de pagament, s'ha aprofitat la seva sòlida estructura de formularis amb validació de dades. Els camps de targeta de crèdit s'han substituït per motius de contacte i àrees de missatge, i l'espai lateral del "carret de la compra" s'ha reconvertit en un útil panell informatiu amb les dades de contacte i les xarxes socials del blog. L'arxiu `checkout.css` assegura que el formulari quedi ben centrat.
-
-## Disseny Web Responsive
-S'ha aplicat un disseny adaptatiu per garantir que la web es vegi correctament en qualsevol dispositiu (mòbil, tauleta o PC):
-* **CSS Grid:** S'utilitzen columnes flexibles que es reordenen automàticament.
-* **Media Queries:** S'han definit punts de ruptura a `1024px` i `768px` per modificar el layout.
-* **Imatges:** Gestió de l'alçada fixa (`height`) i `object-fit: cover` a la galeria per mantenir l'harmonia visual sense deformar els cartells.
-* **Accessibilitat:** Menú desplegable lateral (hamburger menu) per a mòbils i contrastos de color (rosa sobre negre) per a una lectura clara.
+## Disseny web responsiu
+Per tal d'assegurar una experiència de navegació òptima, usable i visualment atractiva en qualsevol tipus de dispositiu (des de pantalles d'escriptori fins a mòvils de format estret), s'han implementat  d'adaptabilitat web:
+* **Quadrícules Adaptatives i Breakpoints de Bootstrap:** S'ha fet ús de l'estructura de files (`row`) i columnes declaratives del framework, acompanyades d'estils CSS personalitzats que sobreescriuen el comportament base del disseny corporatiu a l'arxiu `blog.css`. S'han emprat contenidors definits amb regles de màxims fluids (`max-width: 960px` a `checkout.css` per a la pàgina de contacte) i *media queries* amb punts de ruptura que forcen que el disseny de tres targetes horitzontals de la galeria d'imatges o els blocs de dues columnes laterals de contacte s'apilin verticalment de forma fluida i natural en pantalles amb amplades inferiors a `768px`.
+* **Tractament de Resolució i Proporcions d'Imatges:** Amb l'objectiu de mantenir l'harmonia estètica general i evitar ruptures de línies o deformacions visuals en carregar cartells promocionals i fotografies, he aplicat la propietat CSS de contenció: altures fixades en combinació amb la regla de renderitzat `object-fit: cover`. Això garanteix que les imatges retallin l'excés de fons adaptant-se a la mida de la cel·la de la targeta o la caixa sense perdre la seva relació de proporció de disseny.
+* **Criteris d'Accessibilitat i Contrast:** La plataforma incorpora l'etiquetes adaptatives `data-bs-theme="auto"` per respondre de forma directa a la configuració de contrast del sistema operatiu de l'usuari (mode clar i mode fosc). El codi s'ha estructurat seguint blocs lògics d'etiquetes HTML5 (`<main>`, `<header>`, `<footer>`, `<section>`) i enllaçant controls mitjançant el selector `<label for="...">`. Es tracta d'assolir una gamma cromàtica simple: l'arxiu `blog.css` injecta accents en tonalitats rosades neó de gran intensitat (`#E91E63` i `#C2185B`) per a enllaços actius i botons primaris, ressaltant clarament sobre els fons translucids foscos en el mode nit (`.caixa-cinefils`). Finalment, a nivell de contingut geogràfic, l'accessibilitat física és una dada integrada directament dins de cadascun dels popups dels marcadors dels cinemes, especificant si les sales disposen d'espais totalment adaptats per a cadires de rodes i mobilitat reduïda.
 
 ## Cartografia
-La integració cartogràfica s'ha realitzat mitjançant **Leaflet**:
-* **Mapes de cinemes:** Inclouen popups personalitzats amb informació sobre la direcció, el pàrquing, l'accessibilitat i imatges reals de cada establiment.
+L'apartat de disseny cartogràfic és la base que connecta la informació temàtica amb el territori, utilitzant com a eina d'integració web l'API de **Leaflet.js**:
+* **Consum de Capes Base (Tilesets):** El mapa interactiu utilitza com a cartografia de referència de fons la capa de carrers lliure proveïda per *OpenStreetMap* a través del mètode de crida `L.tileLayer`, mostrant un mapa simple i  optimitzat amb la seva corresponent declaració de metadades i reconeixement d'atribució de drets en peu de pàgina.
+* **Estructures de Dades Espacials per a Marcadors:** En lloc d'escriure codi duplicat per a cadascuna de les 11 sales de cinema del visor "Troba el teu cinema", la informació espacial s'ha sistematitzat definint una col·lecció structured de dades dins d'un vector o *Array* en JavaScript. Cada element emmagatzema les coordenades numèriques en decimal `[Latitud, Longitud]` i la cadena completa amb l'estructura HTML de la taula de continguts del popup. El codi executa un bucle passiu `.forEach` que recorre automàticament el vector dades, instanciant i afegint de forma instantània cada marcador puntual al mapa a través de la sintaxi:
+  ```javascript
+  L.marker(cinema.coords).addTo(map).bindPopup(cinema.html, { maxWidth: 320 });
 
-* **Mapa sortida a Altafulla:** Inclou popus en els punts de trobada i informació addicional útil per al dia de la sortida (Hora de sortida de l'autobús, direcció concreta dels punts de trobada...)
 
-## Dificultats i Millores
-* **Dificultats:** Els reptes principals han estat la configuració dels popups de Leaflet per a que fossin responsius i la coordinació dels elements del formulari de contacte en pantalles petites. 
-He tingut problemes a l'hora de treballar amb qgis2web ja que quan volís visualitzar la meva composició només hem deixaba treballar amb la línea (la ruta) i no hem permetía veure ni els punts, ni els popup.  
+### Dificultats Identificades i Solucions Aplicades
 
-Fer la web responsiva també m'ha suposat un repte perque molts cops no aconseguía els resultats que esperaba. Amb l'ajut de la ia he pogut millorar aquests aspectes però encara falta millora.
+* **Obstacles en la Interoperabilitat SIG-Web (`qgis2web`):** La intenció inicial d'aquest projecte cartogràfic passava per emprar les eines d'automatització del programari professional d'escriptori QGIS i exportar el mapa directament mitjançant el connector `qgis2web`. No obstant això, vaig experimentar problemes tècnics crítics: el complement fallava reiteradament durant la generació de la composició web, impedint la visualització de les capes de punts de marcadors i aunl·lant completament l'execució de les finestres emergents (*Popups*), deixant en pantalla exclusivament el vector de la línia de ruta de carretera. Davant d'aquest problema, vaig decidir realitzar un canvi: assumir la programació de tota la lògica cartogràfica directament en JavaScript fent ús de l'API base de Leaflet. Aquesta decisió va permetre superar la limitació del connector, assolint una flexibilitat de disseny absoluta i l'eliminació de codi sobrant.
+* **Problemes de Comportament de Layout Adaptatiu:** En les primeres fases de l'estructuració, el comportament responsiu d'alguns elements com el formulari complet de la pàgina de contacte es trencava o es desplaçava en pantalles de mòbils de format estret. Finalment, vaig poder solucionar aquests problemes amb l'ús de **Bootstrap**.
 
-* **Millores futures:** * 
-    * Millorar el disseny responsive.
-    * Possibilitat que els usuaris puguin puntuar directament les pel·lícules des de la web i a poder ser, crear un espai d'interacció social on la gent pugui pubicar les seves recomanacions i critiques.
-    * Afegir el mapa a partir de qgis2web amb la ruta ben delimitada acord amb el recorregut del       autobús.
+### Millores Futures Projectades
 
----
-*Facultat de Turisme i Geografia - Universitat Rovira i Virgili*
+* **Interactivitat Social Participativa:** M'agradaría evolucionar el blog estàtic cap a un espai comunitari actiu mitjançant la incorporació d'un sistema de comentaris connectat a un servidor. L'objectiu és permetre que la comunitat de cinèfils pugui puntuar les pel·lícules en directe des de la interfície de la galeria, emmagatzemant els vots per calcular i refrescar la mitjana del rànquing d'estrelles daurades de forma dinàmica.
+* **Perfeccionament del Traçat Cartogràfic i Capes de Transport:** Un cop superats els problemes amb el flux de QGIS, es planteja integrar capes vectorials d'informació de transports oficials de l'Autoritat del Transport Territorial de la Generalitat (ATM Camp de Tarragona) per reflectir amb precisió totes les línies, parades intermèdies i transbords viables per a les sortides culturals al festival d'Altafulla de manera 100% interactiva.
