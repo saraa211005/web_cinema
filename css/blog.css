@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .aclariment{
-  font-size: 13px; color: #898989;
+  font-size: 13px; color: #969696;
 }
 
 .flex-auto {
@@ -40,4 +40,68 @@ h1, h2, h3, h4, h5 {
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #727272;
+}
+
+/* Color per a les estrelletes de valoració (★★★★★) */
+.btn-group p {
+  color: #D4AF37; /* Color Daurat */
+}
+
+
+/* Enlaces generales en ROSA */
+a {
+  color: #E91E63 !important;
+  text-decoration: none;
+}
+a:hover {
+  color: #C2185B !important; /* Rosa más oscuro al pasar el ratón */
+  text-decoration: underline;
+}
+
+/* Botones principales en ROSA (ej: botón "Enviar") */
+.btn-primary {
+  background-color: #E91E63 !important;
+  border-color: #E91E63 !important;
+  color: #FFFFFF !important; /* Texto blanco para que resalte */
+}
+.btn-primary:hover {
+  background-color: #C2185B !important;
+  border-color: #C2185B !important;
+}
+
+/* Botones secundarios/contorno en ROSA (ej: "Veure el tràiler") */
+.btn-outline-primary {
+  color: #E91E63 !important;
+  border-color: #E91E63 !important;
+}
+.btn-outline-primary:hover {
+  background-color: #E91E63 !important;
+  color: #FFFFFF !important;
+}
+
+.nav-link.active, 
+.nav-item > a.active, 
+a.active, 
+[aria-current="page"] {
+  color: #E91E63 !important; /* Mismo rosa neón que los botones */
+  font-weight: bold !important; /* Lo hacemos negrita para que destaque más */
+}
+
+[data-bs-theme="dark"] .caixa-cinefils {
+  background-color: rgba(30, 30, 30, 0.85) !important; /* Fons fosc translúcid */
+  border: 1px solid rgba(233, 30, 99, 0.3) !important; /* Vora subtil rosa */
+  color: #E0E0E0 !important;
+}
+
+/* --- Nuevos estilos para la guía de valoración --- */
+
+/* Hacer que los encabezados (Estels, Significat, Criteri) sean rosa */
+.table thead th {
+  color: #E91E63 !important;
+}
+
+/* Hacer que las estrellas de la primera columna sean doradas */
+.table tbody td:first-child {
+  color: #D4AF37 !important;
+  font-size: 1.1rem; /* Opcional: le da un ligero volumen a las estrellas */
 }
