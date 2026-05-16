@@ -26,6 +26,13 @@ La web es divideix en 6 seccions principals:
 5.  **Sortides (`sortides.html`):** Espai dedicat a esdeveniments culturals itinerants amb rutes cartografiades.
 6.  **Contacte (`contacte.html`):** Formulari complet per rebre feedback i preferències dels usuaris.
 
+## Ús de Bootstrap 5.3.8 (Exemples i Plantilles)
+Per agilitzar el desenvolupament i assegurar un disseny professional i coherent, el projecte ha integrat i personalitzat diversos exemples oficials del framework **Bootstrap 5.3.8**, adaptant-los a les necessitats temàtiques del blog:
+
+* **Plantilla "Blog":** Ha servit com a estructura principal de la web (especialment a l'`index.html` i `mapes.html`). D'aquí s'ha aprofitat la capçalera (header) amb la tipografia *Playfair Display*, la barra de navegació desplaçable (nav-scroller) per a les categories de cinema, i l'estructura de "Featurettes" (blocs on alternen text i imatge/mapa) per presentar el contingut de forma visualment atractiva. L'arxiu `blog.css` dona la identitat visual corporativa a tota la pàgina.
+* **Plantilla "Album":** S'ha utilitzat a la secció de **Galeria** (`galeria.html`) per estructurar l'aparador de les pel·lícules. L'ús de les targetes ("Cards") d'aquest exemple ha estat ideal per mostrar de forma ordenada els cartells, les sinopsis, la valoració per estrelles i els botons d'acció (com l'enllaç al tràiler), aprofitant la quadrícula que s'adapta a qualsevol pantalla.
+* **Plantilla "Checkout":** S'ha implementat i transformat a la pàgina de **Contacte** (`contacte.html`). Tot i ser un disseny originalment pensat per a passarel·les de pagament, s'ha aprofitat la seva sòlida estructura de formularis amb validació de dades. Els camps de targeta de crèdit s'han substituït per motius de contacte i àrees de missatge, i l'espai lateral del "carret de la compra" s'ha reconvertit en un útil panell informatiu amb les dades de contacte i les xarxes socials del blog. L'arxiu `checkout.css` assegura que el formulari quedi ben centrat.
+
 ## Disseny Web Responsive
 S'ha aplicat un disseny adaptatiu per garantir que la web es vegi correctament en qualsevol dispositiu (mòbil, tauleta o PC):
 * **CSS Grid:** S'utilitzen columnes flexibles que es reordenen automàticament.
