@@ -40,10 +40,7 @@ Per tal d'assegurar una experiència de navegació òptima, usable i visualment 
 ## Cartografia
 L'apartat de disseny cartogràfic és la base que connecta la informació temàtica amb el territori, utilitzant com a eina d'integració web l'API de **Leaflet.js**:
 * **Consum de Capes Base (Tilesets):** El mapa interactiu utilitza com a cartografia de referència de fons la capa de carrers lliure proveïda per *OpenStreetMap* a través del mètode de crida `L.tileLayer`, mostrant un mapa simple i  optimitzat amb la seva corresponent declaració de metadades i reconeixement d'atribució de drets en peu de pàgina.
-* **Estructures de Dades Espacials per a Marcadors:** En lloc d'escriure codi duplicat per a cadascuna de les 11 sales de cinema del visor "Troba el teu cinema", la informació espacial s'ha sistematitzat definint una col·lecció structured de dades dins d'un vector o *Array* en JavaScript. Cada element emmagatzema les coordenades numèriques en decimal `[Latitud, Longitud]` i la cadena completa amb l'estructura HTML de la taula de continguts del popup. El codi executa un bucle passiu `.forEach` que recorre automàticament el vector dades, instanciant i afegint de forma instantània cada marcador puntual al mapa a través de la sintaxi:
-  ```javascript
-  L.marker(cinema.coords).addTo(map).bindPopup(cinema.html, { maxWidth: 320 });
-
+* **Estructures de Dades Espacials per a Marcadors:** En lloc d'escriure codi duplicat per a cadascuna de les 11 sales de cinema del visor "Troba el teu cinema", la informació espacial s'ha sistematitzat definint una col·lecció structured de dades dins d'un vector o *Array* en JavaScript. Cada element emmagatzema les coordenades numèriques en decimal `[Latitud, Longitud]` i la cadena completa amb l'estructura HTML de la taula de continguts del popup.
 
 ### Dificultats i solucions
 
