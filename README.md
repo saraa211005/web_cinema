@@ -45,12 +45,12 @@ L'apartat de disseny cartogràfic és la base que connecta la informació temàt
   L.marker(cinema.coords).addTo(map).bindPopup(cinema.html, { maxWidth: 320 });
 
 
-### Dificultats Identificades i Solucions Aplicades
+### Dificultats i solucions
 
 * **Obstacles en la Interoperabilitat SIG-Web (`qgis2web`):** La intenció inicial d'aquest projecte cartogràfic passava per emprar les eines d'automatització del programari professional d'escriptori QGIS i exportar el mapa directament mitjançant el connector `qgis2web`. No obstant això, vaig experimentar problemes tècnics crítics: el complement fallava reiteradament durant la generació de la composició web, impedint la visualització de les capes de punts de marcadors i aunl·lant completament l'execució de les finestres emergents (*Popups*), deixant en pantalla exclusivament el vector de la línia de ruta de carretera. Davant d'aquest problema, vaig decidir realitzar un canvi: assumir la programació de tota la lògica cartogràfica directament en JavaScript fent ús de l'API base de Leaflet. Aquesta decisió va permetre superar la limitació del connector, assolint una flexibilitat de disseny absoluta i l'eliminació de codi sobrant.
 * **Problemes de Comportament de Layout Adaptatiu:** En les primeres fases de l'estructuració, el comportament responsiu d'alguns elements com el formulari complet de la pàgina de contacte es trencava o es desplaçava en pantalles de mòbils de format estret. Finalment, vaig poder solucionar aquests problemes amb l'ús de **Bootstrap**.
 
-### Millores Futures Projectades
+### Millores Futures 
 
 * **Interactivitat Social Participativa:** M'agradaría evolucionar el blog estàtic cap a un espai comunitari actiu mitjançant la incorporació d'un sistema de comentaris connectat a un servidor. L'objectiu és permetre que la comunitat de cinèfils pugui puntuar les pel·lícules en directe des de la interfície de la galeria, emmagatzemant els vots per calcular i refrescar la mitjana del rànquing d'estrelles daurades de forma dinàmica.
 * **Perfeccionament del Traçat Cartogràfic i Capes de Transport:** Un cop superats els problemes amb el flux de QGIS, es planteja integrar capes vectorials d'informació de transports oficials de l'Autoritat del Transport Territorial de la Generalitat (ATM Camp de Tarragona) per reflectir amb precisió totes les línies, parades intermèdies i transbords viables per a les sortides culturals al festival d'Altafulla de manera 100% interactiva.
