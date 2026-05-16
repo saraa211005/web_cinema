@@ -8,7 +8,7 @@
 ---
 
 ## Tema i motivació
-El projecte **Cinesa** neix amb l'objectiu principal de crear espai cinèfil que actui com una guia interactiva que ajudi els espectadors a triar quina pel·lícula veure i, alhora, on i com gaudir-ne en el seu entorn geogràfic real. Aquest blog combina la crítica cinematogràfica (subjectiva) amb la difusió d'informació de base territorial, responent a una motivació essencial, connectar l'oci i la cultura digital amb l'espai físic local.
+El projecte **Cinesa** neix amb l'objectiu de crear espai cinèfil que que sigui d'ajut per a tots aquells espectadors que no sàpiguen triar quina pel·lícula veure i, alhora, on i com gaudir-ne en el seu entorn geogràfic real. Aquest blog combina la crítica cinematogràfica (subjectiva) amb la difusió d'informació de base territorial, responent a una motivació essencial, connectar l'oci i la cultura digital amb l'espai físic local.
 
 El públic objectiu de la plataforma abasta des de joves estudiants fins a aficionats sèniors al cinema de la regió de Tarragona. El **vincle amb la geografia** s'estableix a través de la incorporació de cartografia interactiva en l'entorn de l'usuari. No hem limito a oferir informació teòrica sobre pel·lícules, sinó que també exposo l'oferta de cinemes de la província i  planifico esdeveniments culturals itinerants i festivals locals (com l'Altafulla International Film Festival), actuant així com un dinamitzador territorial del turisme cultural de la zona.
 
