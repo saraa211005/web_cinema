@@ -1,219 +1,520 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de Pel·lícules - Inici</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="estils.css">
-</head>
-
-<body>
- <!-- Capçalera -->
-    <header>
-        <h1>Cinesa</h1>
-        <p class="subtitle">QUE ET VE DE GUST VEURE AVUI?</p>
-    </header>
-
- <!-- Menú de selecció -->
-  <nav>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
-    <ul class="nav-links">
-        <li><a href="index.html">Inici</a></li>
-        <li><a href="infogeneral.html">Informació</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="mapacine.html">Mapa</a></li>
-        <li><a href="sortides.html">Sortides</a></li>
-        <li><a href="contacte.html">Contacte</a></li>
-    </ul>
-</nav>
-
-    <main>
-        <section class="recomanacions">
-          <p class="aclariment"> **El día 1 de cada mes aquesta secció serà actualitzada amb quatre pel·lícules que hagi vist i recomani. No tenen per què ser noves estrenes.</p>
-            <h2>RECOMANACIONS DEL MES</h2>
-
-        <!--PORTADAS RECOMANACIONS-->
-            <section class="top-menu">
-                <a href="#whiplash"><img src="imatges/whiplash.jpg" alt="Whiplash"></a>
-                <a href="#7hermanas"><img src="imatges/7hermanas.jpg" alt="7 Hermanas"></a>
-                <a href="#FRANKENSTEIN"><img src="imatges/FRANKENSTEIN.jpg" alt="Frankenstein"></a>
-                <a href="#elviajedechihiro"><img src="imatges/elviajedechihiro.jpg" alt="El viaje de Chihiro"></a>
-            </section>
-            
-        <!--WHIPLASH-->
-            <div class="movie-grid">
-                <article class="movie-card" id="whiplash">
-
-                    <img src="imatges/whiplash.jpg" alt="Portada">
-                    <div class="movie-info">
-                <!--info-->
-                    <h3>WHIPLASH (2014)</h3>
-                        <p class="rating">
-                            <span class="stars-pink">★★★★★</span>
-                        </p>
-                     <p><strong>DIRECTOR:</strong> Damien Chazelle</p>
-                     <p><strong>ESCRITOR:</strong> Damien Chazelle</p>
-                     <a href="https://youtu.be/Zdgzc-YMimo?si=wIOjKo_gB7uJ2ZVV" class="trailer">Ver el trailer</a>
-                    </div>
-
-                    <div class="peli-descript">
-                        <p><strong>Descripció</strong></p>
-                        <p>Andrew Neiman és un jove i ambiciós baterista de jazz. Marcat pel </p>
-                        <p>fracàs de la carrera literària del seu pare, està obsessionat amb</p>
-                        <p>arribar al cim dins de l'elitista conservatori de música  de la </p> 
-                        <p>Costa Est en el que estudia </p>
-                    </div>
-
-                    <div class="peli-descript">
-                        <p><strong>Crítica</strong></p>
-                        <p>Whiplash me dejó sin aliento. Es una película intensa, casi hipnótica, </p>
-                        <p>que te atrapa desde la primera nota. Me impactó cómo explora los límites</p> 
-                        <p> entre la pasión y la obsesión, mostrando hasta dónde puede llegar alguien</p> 
-                        <p>por alcanzar la perfección. La relación entre el alumno y su profesor es</p> 
-                        <p>brutal, llena de energía y tensión. Cada golpe de batería te sacude, y cuando</p>
-                        <p>termina, sientes que tú también has pasado por esa batalla. Potente, exigente</p>
-                        <p>y emocionante, una experiencia que no se olvida</p>
-                    </div>
-        
-                </article>
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>INICI · Blog Cinesa</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/blog/"
+    />
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="blog.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol
+        id="aperture"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path
+          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+        ></path>
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        ></path>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a class="link-secondary" href="#">Subscriu-te</a>
+          </div>
+          <div class="col-4 text-center">
+            <a
+              class="blog-header-logo text-body-emphasis text-decoration-none"
+              href="#"
+              >CINESA</a
+            >
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="link-secondary" href="#" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="mx-3"
+                role="img"
+                viewBox="0 0 24 24"
+              >
+                <title>Search</title>
+                <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                <path d="M21 21l-5.2-5.2"></path>
+              </svg>
+            </a>
+            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+          </div>
+        </div>
+      </header>
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a class="nav-item nav-link link-body-emphasis active" href="index.html">Inici</a>
+          <a class="nav-item nav-link link-body-emphasis" href="galeria.html">Galeria</a>
+          <a class="nav-item nav-link link-body-emphasis" href="mapes.html">Mapes i sortides</a>
+          <a class="nav-item nav-link link-body-emphasis" href="contacte.html">Contacte</a>
+        </nav>
+      </div>
+    </div>
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic"> El teu racó cinéfil de confiança,</h1>
+          <p class="lead my-3">
+             un espai per descobrir, comentar i gaudir del cinema en totes les seves formes. Aquí hi trobaràs crítiques, recomanacions i reflexions sobre pel·lícules que deixen petjada.
+          </p>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis"
+                >Galeria</strong>
+              <h3 class="mb-0">Recomanacions</h3>
+              <div class="mb-1 text-body-secondary">Última actualització - 15 Maig</div>
+              <p class="card-text mb-auto">
+                Un espai on poder tornar a descobrir els films destacats del blog.
+              </p>
+              <a
+                href="galeria.html"
+                class="icon-link gap-1 icon-link-hover stretched-link">
+                Saber més
+                <svg class="bi" aria-hidden="true">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </a>
             </div>
 
-            <!--7 HERMANAS-->
-                <div class="movie-grid">
-                <article class="movie-card" id="7hermanas">
-                    <img src="imatges/7hermanas.jpg" alt="Portada Película">
-                    
-                    <!--info-->
-                    <div class="movie-info">
-                        <h3>7 HERMANAS (2014)</h3>
-                        <p class="rating">
-                            <span class="stars-pink">★★★★★</span>
-                        </p>
-                        <p><strong>DIRECTOR:</strong> Tommy Wirkola</p>
-                        <p><strong>ESCRITOR:</strong> Max Botkin y Kerry Williamson</p>
-                        <a href="https://youtu.be/ECoekuLodFg?si=8ICgVmcvDaRQ2863" class="trailer">Veure el tràiler</a>
-                    </div>
-                    
-                     <div class="peli-descript">
-                        <p><strong>Descripció</strong></p>
-                        <p>En un futuro en el que la sobrepoblación y la hambruna han obligado al</p>
-                        <p>gobierno a implantar una política de un único hijo, siete hermanas,</p>
-                        <p>cada una con el nombre de un día de la semana, luchan por sobrevivir</p> 
-                        <p>y pasar inadvertidas haciéndose pasar por una sola persona cuando salen </p>
-                        <p>a la calle. Un día una de ellas, Lunes, desaparece sin dejar rastro.</p>
-                    </div>    
+            <div class="col-auto d-none d-lg-block">
+                <img src="../imatges/recomanacions.png" 
+                    alt="Escenes Wiplash" 
+                    width="200" 
+                    height="250" 
+                    style="object-fit: cover; border-radius: 0 5px 5px 0;">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >Mapes</strong
+              >
+              <h3 class="mb-0">Descobreix el teu entorn</h3>
+              <div class="mb-1 text-body-secondary">Última actualització - 15 Maig</div>
+              <p class="mb-auto">
+                Explora els cinemes de la província de Tarragona d’una manera visual i dinàmica. 
+              </p>
+              <a href="mapes.html" class="icon-link gap-1 icon-link-hover stretched-link">
+                Saber més
+                <svg class="bi" aria-hidden="true">
+                  <use xlink:href="#chevron-right"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+             <img src="../imatges/mapa.jpg" 
+                    alt="Mapa província de Tarragona" 
+                    width="200" 
+                    height="250" 
+                    style="object-fit: cover; border-radius: 0 5px 5px 0;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">Blog cinematogràfic</h3>
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Cinesa</h2>
+            <p class="blog-post-meta">
+              15 de Maig del 2026, Sara Laguna
+            </p>
+            <p>
+              Benvinguts a Cinesa, el teu espai de confiança per trobar pel·lícules quan 
+              no saps què veure. Aquesta web neix amb l'objectiu de recopilar les millors 
+              experiències visuals que he tingut, des de clàssics de l'animació com Studio 
+              Ghibli fins a les darreres estrenes de la cartellera.
+            </p>
+            <hr />
+            <p>
+              Aquest és un espai on trobaràs recomanacions amb valoració personal, tràilers
+              i un espai on deixar les teves recomanacions, comentaris i valoracions pròpies.
+            </p>
 
-                    <div class="peli-descript">
-                        <p><strong>Crítica</strong></p>
-                        <p>7 hermanas aquesta historia combina acció, intriga i una</p>
-                        <p>molt potent sobre la identitat i la llibertat.</p> 
-                        <p>Hem va encantar com Noomi Rapace aconsegueix donar vida </p> 
-                        <p>a set personatges disferents,cadascun amb la seva pròpia forma</p> 
-                        <p>de sentir. La pel·lícula manté una tensió constant, però també</p>
-                        <p>té d'altres reflexius sobre el que estaries disposat a fer per</p>
-                        <p>sobreviure.</p>
-                    </div>
+          <h3>Guía de valoració</h3>
+            <p>Interpretació de la meva valoració sobre les pel·lícules de trobaràs en aquest blog:</p>
+            <table class="table">
 
-                </article>
-                </div>
-                
-            <!--FRANKENSTEIN-->
-                <div class="movie-grid">
-                <article class="movie-card" id="FRANKENSTEIN">
-                    <img src="imatges/FRANKENSTEIN.jpg" alt="Portada Película">
-                   
-                <!--info-->
-                    <div class="movie-info">
-                        <h3>FRANKENSTEIN (2025)</h3>
-                         <p class="rating">
-                            <span class="stars-pink">★★★★</span><span>☆</span>
-                        </p>
-                        <p><strong>DIRECTOR:</strong> Guillermo del Toro</p>
-                        <p><strong>ESCRITOR:</strong> Guillermo del Toro</p>
-                        <a href="https://youtu.be/3z_3V8olWnw?si=ca9_xFOnV4DAQuXl" class="trailer">Veure el tràiler</a>
-                    </div>
-                    
-                    <div class="peli-descript">
-                        <p><strong>Descripción</strong></p>
-                        <p>Narra com Víctor Frankenstein, un científic brillant però, obsessionat i</p>
-                        <p>egocèntric, crea vida en un experiment monstruós, abandonant a</p> 
-                        <p>la seva creació i provocant una tragèdia moral sobre la responsabilitat,</p>
-                        <p>la soletat i la veritable naturalesa de la monstruositat.</p>
-                    </div>
+              <thead>
+                <tr>
+                  <th>Estels</th>
+                  <th>Significat</th>
+                  <th>Criteri</th>
+                </tr>
+              </thead>
 
-                    <div class="peli-descript">
-                        <p><strong>Crítica</strong></p>
-                        <p>Frankenstein de Guillermo del Toro m'ha emocionat profundament. Té una </p>
-                        <p>bellesa visual impresionant i una sensibilitat que transforma al monstre en</p> 
-                        <p>algo més que una criatura: en un ser que reflexa la nostra pròpia humanitat.</p> 
-                        <p>Del Toro aconsegueix que una història fosca es senti càlida, trista i, a la</p> 
-                        <p>mateixa vegada, esperançadora.</p>
-                    </div>
+              <tbody>
+                <tr>
+                  <td>★★★★★</td>
+                  <td>Obra mestra</td>
+                  <td>Excel·lent pel·lícula. Una experiència audiovisual molt inmersiva. Et deixa amb ganes
+                     de tornar-la a veure i et fa refelexionar.</td>
+                </tr>
+                <tr>
+                  <td>★★★★☆</td>
+                  <td>Molt bona</td>
+                  <td>Bona pel·lícula i molt recomanable. Fa que t'enganxis i tinguis ganes de saber com 
+                    continúa.</td>
+                </tr>
+                <tr>
+                  <td>★★★☆☆</td>
+                  <td>Entretinguda</td>
+                  <td>És entretinguda i té escenes bones. Compleix amb la volutat d'entretindre.</td>
+                </tr>
+                <tr>
+                  <td>★★☆☆☆</td>
+                  <td>Regular</td>
+                  <td>Té alguna escena interessant però es fa pessada.</td>
+                </tr>
+                <tr>
+                  <td>★☆☆☆☆</td>
+                  <td>Dolenta</td>
+                  <td>No la tornaría a veure. Aburrida, pessada i no hem genera cap emoció.</td>
+                </tr>
+              </tbody>
+            </table>
 
-                </article>
-                </div>
+            <h3>Recomanacions</h3>
+            <p>
+              El día 1 de cada mes la secció de galeria serà actualitzada amb tres pel·lícules que 
+              hagi vist i recomani. Aquestes pel·lícules no tenen per què ser noves estrenes.
+            </p>
             
-            <!--EL VIAJE DE CHIHIRO-->
-                <div class="movie-grid">
-                <article class="movie-card" id="elviajedechihiro">
-                <img src="imatges/elviajedechihiro.jpg" alt="Portada">
-
-                    <div class="movie-info">
-                        <h3>EL VIAJE DE CHIHIRO (2001)</h3>
-                        <p><span class="stars-pink">★★★★</span><span>☆</span></p>
-                        <p><strong>DIRECTOR:</strong> Hayao Miyazaki</p>
-                        <p><strong>ESCRITOR:</strong> Hayao Miyazaki</p>
-                        <a href="https://youtu.be/5Fgq4Osh6XQ?si=ZfDfZxZzjjeZiP5g" class="trailer">Veure el tràiler</a>
+            <p>
+              Podeu recomanar-me pel·lícules i donar-me les vostres crítiques a la pàgina de <a
+                href="contacte.html">Contacte</a
+              >. 
+            </p>
+            
+          </article>
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">Nova funcionalitat: Sortides</h2>
+            <p class="blog-post-meta">
+              Actualització del 12 de maig del 2026 <a href="mapes.html">Sortides</a>
+            </p>
+            <p>
+              Estem emocionats d'anunciar la nostra nova secció interactiva. A partir d'ara, 
+              no només podràs llegir les nostres ressenyes, sinó que també podrem viure experiències
+              en comunitat: 
+            </p>
+            <ul>
+              <li>Visites a museus cinèfils</li>
+              <li>Anar a estrenes en cinemes de la província de Tarragona</li>
+              <li>Assistir a conferències</li>
+            </ul>
+            <p>
+              I moltes activitats més. Uneix-te a les sortides, activitats i debats, fes sentir la teva veu!
+            </p>
+          </article>
+          <nav class="blog-pagination" aria-label="Pagination">
+            <a class="btn btn-outline-primary rounded-pill" href="#">Tornar a dalt</a>
+          </nav>
+        </div>
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">Sobre mí</h4>
+               <h6><b>Sara Laguna Del Puerto, 20 anys</b></h6>
+              <p class="mb-0">
+                Sóc una persona apassionada del cinema, d'aquelles que troben en cada pel·lícula una nova
+                 manera d'explorar el món i les emocions. Sempre he cregut que el cinema té una 
+                 màgia especial. Hi ha pel·lícules que et deixen sense paraules, que et commouen d'una manera
+                  inesperada o que et fan veure les coses des d'una perspectiva diferent. I és precisament 
+                  això el que busco: trobar aquelles històries que deixen empremta, que et fan sentir una 
+                  mica més viu quan s'encenen els crèdits finals.
+              </p>
+            </div>
+            <div>
+              <h4 class="fst-italic">Sortides</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"
+                  >
+                   <img src="../imatges/film_festival.png" 
+                        class="flex-shrink-0" 
+                        alt="imatge sortida" 
+                        width="120" 
+                        height="95" 
+                        style="object-fit: cover">
+                     
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">Altafulla International Film Fest</h6>
+                      <small class="text-body-secondary"
+                        >15 de Maig del 2026</small
+                      >
                     </div>
+                  </a>
+                </li>
+                
+                <li>
+                  <a
+                    class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"
+                  >
+                     <img src="../imatges/backrooms.jpg" 
+                        class="flex-shrink-0" 
+                        alt="imatge sortida" 
+                        width="120" 
+                        height="95" 
+                        style="object-fit: cover">
 
-                    <div class="peli-descript">
-                        <p><strong>Descripción</strong></p>
-                        <p>Chihiro és una nena de deu anys testaruda, creu que l'univers</p>
-                        <p>senser ha de complir els seus desitjos. De camí al seu nou hogar</p> 
-                        <p>junt als sus pares, la familia s'equivoca de camí i apareix al final</p>
-                        <p>d'un misteriós carreró sense sortida, on topen amb un extrany edifici</p>
-                        <p>amb un llarg passatge que els porta a un poble fantasmal on els hi</p>
-                        <p>espera un gran banquet.</p>
+                      <rect width="100%" height="100%" fill="#777"></rect>
+                    </svg>
+                    <div class="col-lg-8">
+                      <h6 class="mb-0">
+                        Estrena pel·lícula "Backrooms"
+                      </h6>
+                      <small class="text-body-secondary"
+                        >5 Juny del 2026</small
+                      >
                     </div>
-
-                    <div class="peli-descript">
-                        <p><strong>Crítica</strong></p>
-                        <p>El viatge de Chihiro és una joia del cinema d'animació. </p>
-                        <p>Combina fantasía, emoció i una reflexió profunda sobre </p> 
-                        <p>el creixement personal. Es crea un món màgic ple de bellesa</p> 
-                        <p>visual i personatges inolbidables, on cada detall transmet </p> 
-                        <p> sensibilitat i significat. La història de Chihiro, una nena</p>
-                        <p>que aprén a enfrentar-se als seus temors i a descobrir la </p>
-                        <p>seva força interior,emociona tant per la seva ternura com pel</p>
-                        <p>seu missatge.</p>
-                    </div>
-
-                </article>
-                </div>
-        </section>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-
-    <footer>
-        <p> 2026 Blog de Pelis - Sara Laguna</p>
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+      <p>
+        CINESA - Blog de pel·lícules
+      </p>
+      <p>
+        cinesara@gmail.com
+      </p>
     </footer>
-    <a href="#" id="backToTop">⬆</a>
-
-    <script>
-    // Código para que el botón aparezca solo cuando bajas
-        const btn = document.getElementById("backToTop");
-
-     window.onscroll = function() {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-            btn.style.display = "flex"; // Se muestra cuando bajas 400px
-        } else {
-            btn.style.display = "none"; // Se oculta si estás arriba
-        }
-        };
-    </script>
-
-</body>
+    <script
+      src="../assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+  </body>
 </html>
