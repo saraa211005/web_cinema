@@ -105,3 +105,48 @@ a.active,
   color: #D4AF37 !important;
   font-size: 1.1rem; /* Opcional: le da un ligero volumen a las estrellas */
 }
+
+/* ESTILS MODE DARK ([data-bs-theme="dark"]); CANVI DE ROSA*/
+
+/* Enllaços generals */
+[data-bs-theme="dark"] a {
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] a:hover {
+  color: #FFB7CE !important;
+}
+
+/* Botons principals (ej:"Enviar") */
+[data-bs-theme="dark"] .btn-primary {
+  background-color: #F48FB1 !important;
+  border-color: #F48FB1 !important;
+  color: #1a1a1a !important; /* Cambiamos el texto a oscuro para que contraste bien sobre el rosa claro */
+}
+[data-bs-theme="dark"] .btn-primary:hover {
+  background-color: #FFB7CE !important;
+  border-color: #FFB7CE !important;
+  color: #1a1a1a !important;
+}
+
+/* Botons secundaris/contorn (ej: "Veure el tràiler") */
+[data-bs-theme="dark"] .btn-outline-primary {
+  color: #F48FB1 !important;
+  border-color: #F48FB1 !important;
+}
+[data-bs-theme="dark"] .btn-outline-primary:hover {
+  background-color: #F48FB1 !important;
+  color: #1a1a1a !important;
+}
+
+/* Enllaços actius i navegació */
+[data-bs-theme="dark"] .nav-link.active, 
+[data-bs-theme="dark"] .nav-item > a.active, 
+[data-bs-theme="dark"] a.active, 
+[data-bs-theme="dark"] [aria-current="page"] {
+  color: #F48FB1 !important;
+}
+
+/* Títols guía de valoració */
+[data-bs-theme="dark"] .table thead th {
+  color: #F48FB1 !important;
+}
