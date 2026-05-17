@@ -14,7 +14,7 @@ El públic objectiu de la plataforma abasta des de joves estudiants fins a afici
 
 ## Dades
 Per a la creació d'aquesta web he utilitzat dades procedents de diverses fonts:
-* **Dades Cinematogràfiques i Textos:** Les crítiques analítiques i valoracions són de redacció pròpia. Les sinopsis oficials, els gèneres, els anys de llançament i les fitxes tècniques s'han extret i adaptat de la base de dades de la plataforma especialitzada *Filmaffinity*.
+* **Dades Cinematogràfiques i Textos:** Les crítiques i valoracions són de redacció pròpia. Les sinopsis oficials, els gèneres, els anys de llançament i les fitxes tècniques s'han extret i adaptat de la base de dades de la plataforma especialitzada *Filmaffinity*.
 
 * **Dades de Geolocalització i Atributs dels Cinemes:** He utilitzat dades espacials de coordenades geogràfiques exactes, adreces postals, tarifes de descompte (Dia de l'Espectador), disponibilitat de serveis d'aparcament i condicions d'accessibilitat per a un total d'11 cinemes distribuïts per tota la província. Aquesta informació l'he obtinguda directament  dels webs oficials de cadascun dels cinemes actius a la regió (Yelmo, Ocine, Axion, MCB, JCA, Rambla de l'Art, etc.).
 
